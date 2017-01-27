@@ -1,26 +1,8 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @Solonnikov
- Watch 13
-  Star 102
-  Fork 74 bradtraversy/loginapp
- Code  Issues 3  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathloginapp/public/css/style.css
-84c20c9  on 18 Mar 2016
- Brad Traversy First Commit
-0 contributors
-RawBlameHistory     
-87 lines (78 sloc)  1.44 KB
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+* {
+  margin: 0;
+  padding: 0;
 }
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -94,13 +76,32 @@ body {
     border-bottom: 0;
   }
 }
-
+.margin-top {
+  margin-top: 40px;
+}
 .page-header{
   margin-top:0;
 }
-
 footer{
   margin-top:40px;
 }
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.to-center {
+  margin: 0 auto;
+}
+.input[type=checkbox],
+.input[type=radio] {
+  display: inline-block;
+  width: 13px;
+    height: 13px;
+    margin:10px;
+}
+.hidden {
+  visibility: hidden;
+}
+.bold {
+  font-weight: bold;
+}

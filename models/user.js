@@ -1,8 +1,12 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+, Schema = mongoose.Schema
 var bcrypt	= require('bcryptjs');
 
 // User Schema
-var UserSchema = mongoose.Schema({
+var UserSchema = Schema({
+	// _id: { 
+	// 	type: Number
+	// },
 	username: {
 		type: String,
 		index:true
@@ -13,9 +17,22 @@ var UserSchema = mongoose.Schema({
 	email: {
 		type: String
 	},
-	name: {
+	gender: {
 		type: String
-	}
+	},
+	weight: {
+		type: Number
+	},
+	norm: {
+		type: Number
+	},
+	facebook: {
+		id: String,
+		token: String, 
+		email: String,
+		name: String
+	},
+	drinks: [{ type: Schema.Types.ObjectId, ref: 'Drink' }]
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);
@@ -28,7 +45,6 @@ module.exports.createUser = function(newUser, callback) {
         });
     });
 }
-
 module.exports.getUserByUsername = function(username, callback){
 	var query = {username: username};
 	User.findOne(query, callback);
@@ -44,15 +60,3 @@ module.exports.comparePassword = function (candidatePassword, hash, callback){
 		callback(null, isMatch);
 	});
 }
-
-
-
-
-
-
-
-
-
-
-
-
